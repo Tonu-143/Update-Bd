@@ -126,15 +126,6 @@ def login():
 
 		menu()
 
-	except KeyError, IOError:
-
-		token = raw_input("[?] Enter Token : ")
-
-		if token == "":
-
-			print("Wrong Input")
-
-		try:
 
 			nama = requests.get("https://graph.facebook.com/me?access_token="+token).json()["name"].lower()
 
